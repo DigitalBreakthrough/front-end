@@ -6,7 +6,7 @@ import AlbumStage from './AlbumStage'
 
 export default function MainView() {
   return (
-    <div>
+    <div className='main-viewport'>
         <LoadStage />
         <ProgressStage />
 

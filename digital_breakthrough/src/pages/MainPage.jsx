@@ -14,8 +14,8 @@ export default function MainPage() {
   return (
     <Context.Provider>
         <div className='container'>
-        <MainBlock />
-        <HistoryBlock />
+          <MainBlock />
+          <HistoryBlock />
         </div>
     </Context.Provider>
     
