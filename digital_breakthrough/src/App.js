@@ -1,10 +1,11 @@
-import AlbumStage from "./components/main-block/main-view/AlbumStage";
+import MainPage from "./pages/MainPage";
+//import './styles/css-reset.css';
+import './styles/index.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <AlbumStage />
-    </div>
+      <MainPage />
   );
 }
 
