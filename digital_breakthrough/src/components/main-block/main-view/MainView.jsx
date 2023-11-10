@@ -3,16 +3,20 @@ import LoadStage from './LoadStage'
 import ProgressStage from './ProgressStage'
 import PlayerStage from './PlayerStage'
 import AlbumStage from './AlbumStage'
+import ControlButtons from './ControlButtons'
 
 export default function MainView() {
   return (
-    <div className='main-viewport'>
+    <div>
+      <div className='main-viewport'>
         <LoadStage />
         <ProgressStage />
 
 
         <PlayerStage />
         <AlbumStage />
+    </div>
+    <ControlButtons />
     </div>
   )
   // В зависимости от типа проверки (видео или череда картинок), включается либо плеер видео, либо слайдшоу картинок
