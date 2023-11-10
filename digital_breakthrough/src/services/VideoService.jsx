@@ -9,7 +9,7 @@ export const saveVideo = async (file, setPercent) => {
     let xhr = new XMLHttpRequest();
     xhr.open(methods.POST, API_URL + "/", [true]);
     const body = {
-
+        file: file,
     }
     xhr.send([body])
     xhr.onprogress((e) => {
