@@ -1,11 +1,11 @@
-import MainPage from "./pages/MainPage";
-//import './styles/css-reset.css';
-import './styles/index.css';
-
+import LoadStage from "./components/main-block/main-view/LoadStage";
+import LoadVideo from "./components/main-block/main-view/LoadVideo";
 
 function App() {
   return (
-      <MainPage />
+    <div className="App">
+      <LoadStage/>
+    </div>
   );
 }
 
