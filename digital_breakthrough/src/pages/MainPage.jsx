@@ -1,5 +1,6 @@
 import React from 'react'
 import MainBlock from '../components/main-block/MainBlock';
+import HistoryBlock from'../components/history-block/HistoryBlock'
 
 
 export default function MainPage() {

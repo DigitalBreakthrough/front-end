@@ -1,8 +1,3 @@
-// переход на таймкоды
-// drag anf drop
-
-
-
 const API_URL = ""
 
 const methods = {
