@@ -4,7 +4,7 @@ import TimeCodeView from './time-codes/TimeCodeView'
 
 export default function MainBlock() {
   return (
-    <div classname='main-block'>
+    <div className='main-block'>
         <MainView />
         <TimeCodeView />
     </div>

@@ -6,7 +6,9 @@ export default function MainPage() {
   const Context = React.createContext();
 
   return (
-    <Context.Provider>
+    <Context.Provider value={{
+      
+    }}>
       <div className="container">
         <MainBlock />
         <HistoryBlock />

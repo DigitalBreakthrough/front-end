@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const images = [
   "https://i2.wp.com/miro.medium.com/1*VC8AfmFPgAjJi1uycAVIqw.png",
@@ -7,6 +7,11 @@ const images = [
 
 const AlbumStage = () => {
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    clearInterval();
+    setInterval(handleNext, 3000);
+  })
 
   const handlePrev = () => {
     setIndex(index === 0 ? images.length - 1 : index - 1);
@@ -25,23 +30,33 @@ const AlbumStage = () => {
         width: "989px",
       }}
     >
-      <button onClick={handlePrev} style={{
-        width: "50px",
-      }}>prev</button>
+      <button
+        onClick={handlePrev}
+        style={{
+          width: "50px",
+        }}
+      >
+        prev
+      </button>
       <div
         className="carousel"
         style={{
           width: "889px",
           height: "449px",
           background: `url(${images[index]}) center/100% no-repeat`,
-          transitionProperty: "width",
+          transitionProperty: "background",
           transitionDuration: ".5s",
-          transitionTimingFunction: "linear",
+          transitionTimingFunction: "ease-in-out",
         }}
       ></div>
-      <button onClick={handleNext} style={{
-        width: "50px",
-      }}>next</button>
+      <button
+        onClick={handleNext}
+        style={{
+          width: "50px",
+        }}
+      >
+        next
+      </button>
     </div>
   );
 };
