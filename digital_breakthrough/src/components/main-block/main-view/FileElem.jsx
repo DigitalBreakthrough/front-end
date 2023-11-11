@@ -3,6 +3,7 @@ import React from 'react'
 export default function FileElem(props) {
   const { previewUrl, fileName, fileSize, loadProgress, totalProgress } = props;
 
+  console.log(loadProgress);
   const calculateProgress = (loadProgress)=>{
     return loadProgress/totalProgress;
   }
@@ -12,10 +13,10 @@ export default function FileElem(props) {
       <div className='file-info'>
         <div className='file-meta'>
           <div>{fileName}</div>
-          <div className='ghost'>{fileSize}</div>
+          <div className='ghost'>{fileSize} МБ</div>
         </div>
         {
-          loadProgress == undefined ?
+          loadProgress === undefined ?
           <div className='ghost'>
             Файл выбран
           </div>

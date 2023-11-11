@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import HistoryElem from "./HistoryElem";
-import { FileContext } from "../../context/FilesContex";
+import { FileContext } from "../../context/FilesContext";
 import { getHistory } from "../../utils/HistoryHandler";
 
 export default function HistoryBlock({ history }) {

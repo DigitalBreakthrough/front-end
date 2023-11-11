@@ -30,8 +30,8 @@ export default function ControlButtons() {
         className="request-buttons"
         style={{ display: value.files ? "flex" : "none" }}
       >
-        <button>Отмена</button>
-        <button>Проверить</button>
+        <button id="cancel-button">Отмена</button>
+        <button id="send-button">Проверить</button>
       </div>
       <button id="download" disabled={value.files ? false : true}>
       <img src={Save} alt="" />
