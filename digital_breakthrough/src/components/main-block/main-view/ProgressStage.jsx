@@ -8,7 +8,7 @@ export default function ProgressStage() {
 
   return (
     <div
-      className="loaded_files"
+      className="files-container"
       style={{
         display: value.files === null ? "none" : "flex",
       }}

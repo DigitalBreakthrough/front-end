@@ -36,7 +36,7 @@ export default function HistoryElem(props) {
   return (
     <div className = 'history-elem'>
       <img src={previewUrl} alt="" />
-      <div className='history-meta'>
+      <div className='meta'>
         <h3>{date}</h3>
         <div>{getStatusString(status)}</div>
         <div style={percentStyle} className='percent'>{percentBody}%</div>
