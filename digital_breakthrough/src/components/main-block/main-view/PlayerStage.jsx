@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function PlayerStage() {
   return (
-    <div>PlayerStage</div>
+    <div style={{display:"none"}}>PlayerStage</div>
   )
 }

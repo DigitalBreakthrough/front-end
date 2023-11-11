@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
+import { FileContext } from "../../../context/FilesContex";
 
 export default function LoadVideo() {
-  const [files, setFiles] = useState(null);
+  const { value } = useContext(FileContext);
   const inputRef = useRef();
 
   const handleDragOver = (event) => {
@@ -13,23 +14,26 @@ export default function LoadVideo() {
     console.log(event.dataTransfer.files);
   };
 
-  if (files) {
-    return (
-      <div>
-        {Array.from(files).map((file, idx) => {
-          console.log(file);
-          return <div key={idx}>{file.name}</div>;
-        })}
-      </div>
-    );
-  }
-
+  // if (value.files) {
+  //   console.log(value.files);
+  //   let block = document.getElementById("pics-half");
+  //   block.style.display = "none";
+  //   return (
+  //     <div className="loaded_files">
+  //       {Array.from(value.files).map((file, idx) => {
+  //         return <div key={idx}>{file.name}</div>;
+  //       })}
+  //     </div>
+  //   );
+  // } 
   return (
     <>
       <div
+        id="video-half"
         className="load-half"
         onDragOver={handleDragOver}
         onDrop={handleDrop}
+        style={{display: !value.files ? "flex" : "none"}}
       >
         <div>Перетяните видео сюда</div>
         <div>или</div>
@@ -37,7 +41,7 @@ export default function LoadVideo() {
           type="file"
           accept="video/mp4"
           multiple
-          onChange={(e) => setFiles(e.target.files)}
+          onChange={(e) => value.setFiles(e.target.files)}
           hidden
           ref={inputRef}
         />

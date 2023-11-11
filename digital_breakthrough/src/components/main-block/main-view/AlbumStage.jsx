@@ -24,7 +24,7 @@ const AlbumStage = () => {
     <div
       className=""
       style={{
-        display: "flex",
+        display: "none",
         justifyContent: "space-between",
         width: "989px",
       }}

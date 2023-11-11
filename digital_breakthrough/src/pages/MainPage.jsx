@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import MainBlock from "../components/main-block/MainBlock";
 import HistoryBlock from "../components/history-block/HistoryBlock";
+import "../styles/index.css"
+import { FileContext } from "../context/FilesContex";
 
 export default function MainPage() {
-  const Context = React.createContext();
+  const [files, setFiles] = useState(null);
+
+  const value = {
+    files, setFiles
+  }
 
   return (
-    <Context.Provider value={{
-      
-    }}>
+    <FileContext.Provider value={{value}}>
       <div className="container">
         <MainBlock />
         <HistoryBlock />
       </div>
-    </Context.Provider>
+    </FileContext.Provider>
   );
 }

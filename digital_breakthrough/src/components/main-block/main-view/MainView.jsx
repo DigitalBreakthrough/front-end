@@ -11,8 +11,6 @@ export default function MainView() {
       <div className='main-viewport'>
         <LoadStage />
         <ProgressStage />
-
-
         <PlayerStage />
         <AlbumStage />
     </div>
