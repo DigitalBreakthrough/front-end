@@ -45,11 +45,13 @@ export default function HistoryElem(props) {
   return (
     <div className="history-elem">
       <img src={previewUrl} alt="" />
-      <div className="meta">
+      <div className='history-info'>
         <h3>{date}</h3>
-        <div>{getStatusString(status)}</div>
-        <div style={percentStyle} className="percent">
-          {percentBody}%
+        <div className="meta">
+          <div>{getStatusString(status)}</div>
+          <div style={percentStyle} className="percent">
+            {percentBody}%
+          </div>
         </div>
       </div>
       <button onClick={handleDeleteNote}>

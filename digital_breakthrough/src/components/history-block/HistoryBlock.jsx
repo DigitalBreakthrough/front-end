@@ -11,7 +11,7 @@ export default function HistoryBlock({ history }) {
   return (
     <div className="history-block">
       <h2>История проверок</h2>
-      { value.history !== undefined && value.history.map((note, index) => {
+      { value.history !== undefined && value.history !== null && value.history.map((note, index) => {
         return (
           <HistoryElem
             previewUrl={note.previewUrl}
