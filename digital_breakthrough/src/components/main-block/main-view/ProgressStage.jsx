@@ -4,9 +4,7 @@ import FileElem from "./FileElem";
 
 export default function ProgressStage() {
   const { value } = useContext(FileContext);
-
-  console.log(value.files);
-
+  
   return (
     <div
       className="files-container"
