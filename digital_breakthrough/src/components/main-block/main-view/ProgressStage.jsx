@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { FileContext } from "../../../context/FilesContext";
 import FileElem from "./FileElem";
-import { save } from "../../../services/VideoService";
+import PicPlaceholder from "../../../assets/images/picturePlaceholder.png"
 
 export default function ProgressStage() {
   const { value } = useContext(FileContext);
@@ -15,8 +15,8 @@ export default function ProgressStage() {
     >
       {value.files !== null &&
         Array.from(value.files).map((file, idx) => {
-          // save(file, value.setPercent);
-          return <FileElem key={idx} previewUrl={''} fileName={file.name} fileSize={file.size/1048576} loadProgress={value.percent} totalProgress={file.size}/>;
+          const truncateName = file.name.length <= 32 ? file.name : file.name.slice(0, 32) + '...';
+          return <FileElem key={idx} previewUrl={PicPlaceholder} fileName={truncateName} fileSize={(file.size/1048576).toFixed(1)} />;
         })}
     </div>
   );

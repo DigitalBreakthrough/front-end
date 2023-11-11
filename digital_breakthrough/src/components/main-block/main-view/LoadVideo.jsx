@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { FileContext } from "../../../context/FilesContext";
+import { STAGE } from "../../../utils/StageData";
 
 export default function LoadVideo() {
   const { value } = useContext(FileContext);
@@ -41,7 +42,10 @@ export default function LoadVideo() {
           type="file"
           accept="video/mp4"
           multiple
-          onChange={(e) => value.setFiles(e.target.files)}
+          onChange={(e) => {
+            value.setStage(STAGE.PROGRESS);
+            value.setFiles(e.target.files);
+          }}
           hidden
           ref={inputRef}
         />

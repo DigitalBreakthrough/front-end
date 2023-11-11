@@ -1,6 +1,13 @@
 @font-face {
     font-family: 'Noto Sans';
     src: url(../assets/fonts/NotoSans-SemiBold.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(../assets/fonts/NotoSans-ExtraBold.ttf);
+    font-weight: bold;
 }
 
 @font-face {
@@ -38,6 +45,7 @@ html{
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -46,7 +54,7 @@ html{
     flex-direction: column;
     height: fit-content;
     background: white;
-    width: 100%;
+    width: 80%;
     border-radius: 20px;
     padding: 10px;
     gap: 10px;
@@ -126,11 +134,21 @@ html{
 }
 
 .file-element{
+    height: 80px;
+    font-family: 'Noto Sans';
 
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.file-element img{
+    height: 100%;
+    width: auto;
 }
 
 .file-info{
-
+    display: inline;
 }
 
 .file-meta{
@@ -162,6 +180,20 @@ html{
 .request-buttons{
     display: flex;
     flex-direction: row;
+    gap: 10px;
+}
+
+.request-buttons button{
+    color: white;
+    border-radius: 10px;
+}
+
+#cancel-button{
+    background: #D95656;
+}
+
+#send-button{
+    background: #1C80DD;
 }
 
 .timecode-container{
@@ -224,6 +256,8 @@ html{
 }
 
 .history-block{
+    font-family: 'Noto Sans';
+    font-weight: bold;
     width: 60%;
     display: flex;
     flex-direction: column;
