@@ -5,7 +5,7 @@ const methods = {
     GET: "GET"
 }
 
-export const saveVideo = async (file, setPercent) => {
+export const save = async (file, setPercent) => {
     let xhr = new XMLHttpRequest();
     xhr.open(methods.POST, API_URL + "/", [true]);
     const body = {
@@ -17,7 +17,7 @@ export const saveVideo = async (file, setPercent) => {
     })
 }
 
-export const uploadVideo = async (setPercent) => {
+export const upload = async (setPercent) => {
     return await fetch(API_URL + "/")
             .then(async (response) => {
                 const reader = response.body.getReader();

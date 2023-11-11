@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import DeleteImage from "../../assets/images/delete.png";
 import { deleteNote, getHistory } from "../../utils/HistoryHandler";
-import { FileContext } from "../../context/FilesContex";
+import { FileContext } from "../../context/FilesContext";
 
 export default function HistoryElem(props) {
   const { previewUrl, date, status, percentBody, index } = props;
