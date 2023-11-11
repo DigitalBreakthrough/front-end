@@ -49,7 +49,7 @@ export default function LoadVideo() {
           hidden
           ref={inputRef}
         />
-        <button onClick={() => inputRef.current.click()}>
+        <button onClick={() => inputRef.current.click()} disabled={true}>
           Выберите видео...
         </button>
       </div>

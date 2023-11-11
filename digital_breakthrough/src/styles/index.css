@@ -125,6 +125,10 @@ html{
     background: #1C80DD;
 }
 
+.load-half button:disabled{
+    background: #5e758a;
+}
+
 .files-container {
     width: 100%;
     height: 100%;
