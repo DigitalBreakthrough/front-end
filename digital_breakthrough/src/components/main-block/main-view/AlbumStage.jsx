@@ -9,9 +9,8 @@ const AlbumStage = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    clearInterval();
-    setInterval(handleNext, 3000);
-  })
+    
+  }, [])
 
   const handlePrev = () => {
     setIndex(index === 0 ? images.length - 1 : index - 1);
