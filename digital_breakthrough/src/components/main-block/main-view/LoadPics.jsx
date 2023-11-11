@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
-import { FileContext } from "../../../context/FilesContex";
+import { FileContext } from "../../../context/FilesContext";
+import { STAGE } from "../../../utils/StageData";
 
 export default function LoadPics() {
   const { value } = useContext(FileContext);
@@ -40,7 +41,10 @@ export default function LoadPics() {
         type="file"
         accept=".png, .jpg"
         multiple
-        onChange={(e) => value.setFiles(e.target.files)}
+        onChange={(e) => {value.setFiles(e.target.files)
+                          value.setStage(STAGE.PROGRESS)
+                          console.log();
+                }}
         hidden
         ref={inputRef}
       />

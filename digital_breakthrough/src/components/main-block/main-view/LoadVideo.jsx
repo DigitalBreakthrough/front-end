@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { FileContext } from "../../../context/FilesContex";
+import { FileContext } from "../../../context/FilesContext";
 
 export default function LoadVideo() {
   const { value } = useContext(FileContext);

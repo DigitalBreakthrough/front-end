@@ -1,6 +1,6 @@
 export const STAGE = {
     LOAD : 'load',
-    PROGRESS : 'process',
+    PROGRESS : 'progress',
     ALBUM : 'album',
     VIDEO : 'video'
 }

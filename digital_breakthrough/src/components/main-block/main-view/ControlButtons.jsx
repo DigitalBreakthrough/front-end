@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { FileContext } from "../../../context/FilesContex";
+import { FileContext } from "../../../context/FilesContext";
 import New from "../../../assets/images/new.png";
 import Save from "../../../assets/images/save.png"
+import { STAGE } from "../../../utils/StageData";
 
 export default function ControlButtons() {
   const { value } = useContext(FileContext);
@@ -12,6 +13,7 @@ export default function ControlButtons() {
     for (let i = 0; i < blocks.length; i++) {
       blocks[i].removeAttribute("style");
     }
+    value.setStage(STAGE.LOAD);
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import { FileContext } from "../../../context/FilesContex";
+import { FileContext } from "../../../context/FilesContext";
+import FileElem from "./FileElem";
 
 export default function ProgressStage() {
   const { value } = useContext(FileContext);
@@ -15,7 +16,7 @@ export default function ProgressStage() {
     >
       {value.files !== null &&
         Array.from(value.files).map((file, idx) => {
-          return <div key={idx}>{file.name}</div>;
+          return <FileElem key={idx} previewUrl={''} fileName={file.name} fileSize={file.size/1048576} loadProgress totalProgress />;
         })}
     </div>
   );

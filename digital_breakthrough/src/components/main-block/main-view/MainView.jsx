@@ -4,20 +4,20 @@ import ProgressStage from './ProgressStage'
 import PlayerStage from './PlayerStage'
 import AlbumStage from './AlbumStage'
 import ControlButtons from './ControlButtons'
-import { FileContext } from '../../../context/FilesContex'
+import { FileContext } from '../../../context/FilesContext'
 import { STAGE } from '../../../utils/StageData'
 
 export default function MainView() {
-  const contextData = useContext(FileContext);
+  const contextData = useContext(FileContext).value;
 
   return (
     <div className='main-view'>
       <div className='ratio16'>
         <div className='main-viewport'>
           { contextData.stage == STAGE.LOAD ? <LoadStage /> : ""}
-          { contextData.stage == STAGE.PROCESS ? <ProgressStage /> : ""}
-          { contextData.stage == STAGE.PlayerStage ? <ProgressStage /> : ""}
-          <AlbumStage />
+          { contextData.stage == STAGE.PROGRESS ? <ProgressStage /> : ""}
+          { contextData.stage == STAGE.VIDEO ? <PlayerStage /> : ""}
+          { contextData.stage == STAGE.ALBUM ? <AlbumStage /> : ""}
         </div>
       </div>
     <ControlButtons />

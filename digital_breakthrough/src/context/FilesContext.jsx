@@ -1,5 +1,4 @@
-import { createContext, useState } from "react";
-import { STAGE } from "../utils/StageData";
+import { createContext } from "react";
 
 export const FileContext = createContext();
 

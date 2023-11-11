@@ -125,6 +125,22 @@ html{
     box-sizing: border-box;
 }
 
+.file-element{
+
+}
+
+.file-info{
+
+}
+
+.file-meta{
+
+}
+
+.ghost{
+    color: rgba(0, 0, 0, 0.3);
+}
+
 .control_buttons {
     display: flex;
     justify-content: space-between;
