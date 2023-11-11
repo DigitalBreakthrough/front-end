@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { FileContext } from "../../../context/FilesContex";
+import New from "../../../assets/images/new.png";
+import Save from "../../../assets/images/save.png"
 
 export default function ControlButtons() {
   const { value } = useContext(FileContext);
@@ -19,6 +21,7 @@ export default function ControlButtons() {
         disabled={value.files ? false : true}
         onClick={handleNewCheck}
       >
+        <img src={New} alt="" />
         Новая проверка
       </button>
       <div
@@ -29,6 +32,7 @@ export default function ControlButtons() {
         <button>Проверить</button>
       </div>
       <button id="download" disabled={value.files ? false : true}>
+      <img src={Save} alt="" />
         Скачать
       </button>
     </div>

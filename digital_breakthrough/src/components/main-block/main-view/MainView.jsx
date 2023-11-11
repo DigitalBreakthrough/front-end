@@ -7,13 +7,15 @@ import ControlButtons from './ControlButtons'
 
 export default function MainView() {
   return (
-    <div>
-      <div className='main-viewport'>
-        <LoadStage />
-        <ProgressStage />
-        <PlayerStage />
-        <AlbumStage />
-    </div>
+    <div className='main-view'>
+      <div className='ratio16'>
+        <div className='main-viewport'>
+          <LoadStage />
+          <ProgressStage />
+          <PlayerStage />
+          <AlbumStage />
+        </div>
+      </div>
     <ControlButtons />
     </div>
   )

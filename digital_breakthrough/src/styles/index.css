@@ -1,6 +1,18 @@
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(../assets/fonts/NotoSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(../assets/fonts/Inter-Medium.ttf);
+}
+
 html, body{
     margin: 0px;
     height: 100%;
+
+    background: #E4F4FF;
 }
 
 html{
@@ -14,34 +26,91 @@ html{
 .container{
     width: 80%;
     margin: 0 auto;
-
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+    gap: 50px;
 }
 
 .main-block{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.main-view{
+    background: white;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .main-viewport{
+    background: #F3FEFF;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.25) inset;
+
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
+    height: 100%;
+}
+
+.ratio16{
+    width: 100%;
+    position: relative;
+}
+
+.ratio16::after{
+    display: block;
+    content: '';
+    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
 }
 
 .load-block {
-    height: 590px;
     width: 100%;
+    height: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.sub-line{
+    height: 100%;
+    width: 4px;
+    background: #AEB4B6;
+    border-radius: 5px;
 }
 
 .load-half {
     width: 50%;
     height: 100%;
+
+    font-size: 20px;
+    font-family: 'Inter';
+    color: #69777B;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.load-half button{
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #1C80DD;
 }
 
 .loaded_files {
@@ -54,17 +123,62 @@ html{
 }
 
 .control_buttons {
-    width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
+}
+
+.control_buttons button{
+    font-size: 20px;
+    font-family: 'Inter';
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.request-buttons{
+    display: flex;
+    flex-direction: row;
 }
 
 .timecode-container{
-
+    min-width: 40vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background: white;
+    overflow: hidden;
 }
 
 .timecode{
+    font-family: 'Noto Sans';
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
 
+.timecode img{
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+}
+
+.percent{
+    width: fit-content;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.timecode-title{
+    padding: 10px;
+    font-size: 32px;
+    font-family: 'Inter';
+    color: white;
+    background: #597A99;
 }
 
 .history-block{
@@ -72,9 +186,43 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+    gap: 10px;
 }
 
 .history-elem{
+    height: 180px;
+    width: 100%;
+    padding: 10px;
     display: flex;
     flex-direction: row;
+    border-radius: 20px;
+    background: rgba(179, 197, 210, 0.50);
+    gap: 10px;
+}
+
+.history-elem img{
+    border-radius: 10px;
+    height: 100%;
+    width: auto;
+}
+
+.history-meta{
+    font-family: 'Noto Sans';
+    font-size: 24px;
+    width: 100%;
+}
+
+.history-elem button{
+    height: 30px;
+    width: auto;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background: #CB5858;
+}
+
+button img{
+    height: 100%;
+    width: auto;
 }

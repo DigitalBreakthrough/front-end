@@ -16,13 +16,31 @@ export default function TimeCode(props) {
     }
   };
 
+  
+
+  const getColorByPercentage = (percentage) => {
+    if (percentage >= 0 && percentage <= 20) {
+        // Интерполяция цвета от зеленого (0%) до красного (20%)
+        let green = Math.round(255 - (percentage / 20) * 255);
+        let red = Math.round((percentage / 20) * 255);
+        return `rgb(${red}, ${green}, 0)`;
+    } else {
+        // Все значения больше 20% будут красными
+        return 'rgb(255, 0, 0)';
+    }
+    }
+
+    const percentStyle = {
+      background: getColorByPercentage(percentBody)
+    }
+
   return (
     <div className='timecode'>
         <img src={previewUrl} alt="" />
-        <div>
+        <div className='timecode-meta'>
             <h3>{getStatusString(status)}</h3>
             <div>{time}</div>
-            <div>{percentBody}</div>
+            <div style={percentStyle} className='percent'>{percentBody}%</div>
         </div>
     </div>
   )
