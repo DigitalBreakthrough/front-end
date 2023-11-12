@@ -1,24 +1,33 @@
-const API_URL = "localhost:8081/attachments"
+const API_URL = "https://b10b-78-29-79-177.ngrok-free.app/attachments"
 
 const methods = {
     POST: "POST",
     GET: "GET"
 }
 
-export const save = async (file, setPercent) => {
-    let xhr = new XMLHttpRequest();
-    xhr.open(methods.POST, API_URL + "/upload", [true]);
-    const files = [];
-    files.push(file);
-    const body = {
-        file: file
+export const save = (file) => {
+    // let xhr = new XMLHttpRequest();
+    // xhr.open(methods.POST, API_URL + "/", [true]);
+    // const body = {
+    //     file: file,
+    // }
+    // xhr.send([body])
+    // xhr.onprogress((e) => {
+    //    setPercent(e.loaded)     
+    // })
+    const data = new FormData();
+    data.append("file", file);
+    const options = {
+        method: methods.POST,
+        body: data,
     }
-    xhr.send([body])
-    xhr.onprogress((e) => {
-       setPercent(e.loaded)     
-    })
-    return xhr.upload.response;
+    return fetch(API_URL + "/upload", options)
+        .then(response => response.json())
+        .then(response => response)
+        .catch(error => console.log(error));
 }
+
+
 
 export const upload = async (setPercent) => {
     return await fetch(API_URL + "/")

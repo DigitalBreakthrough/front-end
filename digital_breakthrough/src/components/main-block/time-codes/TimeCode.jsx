@@ -36,11 +36,11 @@ export default function TimeCode(props) {
 
   return (
     <div className='timecode'>
-        <img src={previewUrl} alt="" />
+        {/* <img src={previewUrl} alt="" /> */}
         <div className='timecode-info'>
             <div>{getStatusString(status)}</div>
             <div className='meta'>
-              <div>{time}</div>
+              {/* <div>{time}</div> */}
               <div style={percentStyle} className='percent'>{percentBody}%</div>
             </div>
         </div>

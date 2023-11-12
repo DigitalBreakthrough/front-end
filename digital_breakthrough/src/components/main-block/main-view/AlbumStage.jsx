@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-
-const images = [
-  "https://i2.wp.com/miro.medium.com/1*VC8AfmFPgAjJi1uycAVIqw.png",
-  "https://snapcomp.ru/images/stat/Movavi-video/movavi-slayd-scrin5.jpg",
-];
+import React, { useContext, useEffect, useState } from "react";
+import { FileContext } from "../../../context/FilesContext";
 
 const AlbumStage = () => {
+  const { value } = useContext(FileContext);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -13,10 +10,12 @@ const AlbumStage = () => {
   }, [])
 
   const handlePrev = () => {
+    let images = value.currentResult !== null && value.currentResult.attachments;
     setIndex(index === 0 ? images.length - 1 : index - 1);
   };
 
   const handleNext = () => {
+    let images = value.currentResult !== null && value.currentResult.attachments;
     setIndex(index === images.length - 1 ? 0 : index + 1);
   };
 
@@ -24,7 +23,6 @@ const AlbumStage = () => {
     <div
       className=""
       style={{
-        display: "none",
         justifyContent: "space-between",
         width: "989px",
       }}
@@ -42,7 +40,7 @@ const AlbumStage = () => {
         style={{
           width: "889px",
           height: "449px",
-          background: `url(${images[index]}) center/100% no-repeat`,
+          background: value.currentResult !== null && `url(${value.currentResult.attachments[0]}) center/100% no-repeat`,
           transitionProperty: "background",
           transitionDuration: ".5s",
           transitionTimingFunction: "ease-in-out",

@@ -3,6 +3,7 @@ import MainView from './main-view/MainView'
 import TimeCodeView from './time-codes/TimeCodeView'
 import { FileContext } from '../../context/FilesContext'
 import { STAGE } from '../../utils/StageData';
+import AlbumStage from './main-view/AlbumStage';
 
 export default function MainBlock() {
   const { value } = useContext(FileContext);

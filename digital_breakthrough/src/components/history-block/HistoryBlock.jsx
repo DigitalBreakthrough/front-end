@@ -6,8 +6,6 @@ import { getHistory } from "../../utils/HistoryHandler";
 export default function HistoryBlock({ history }) {
   const { value } = useContext(FileContext);
 
-  console.log(value);
-
   return (
     <div className="history-block">
       <h2>История проверок</h2>

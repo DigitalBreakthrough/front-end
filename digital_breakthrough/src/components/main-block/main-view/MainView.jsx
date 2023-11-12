@@ -14,10 +14,10 @@ export default function MainView() {
     <div className='main-view'>
       <div className='ratio16'>
         <div className='main-viewport'>
-          { contextData.stage == STAGE.LOAD ? <LoadStage /> : ""}
-          { contextData.stage == STAGE.PROGRESS ? <ProgressStage /> : ""}
-          { contextData.stage == STAGE.VIDEO ? <PlayerStage /> : ""}
-          { contextData.stage == STAGE.ALBUM ? <AlbumStage /> : ""}
+          { contextData.stage === STAGE.LOAD ? <LoadStage /> : ""}
+          { contextData.stage === STAGE.PROGRESS ? <ProgressStage /> : ""}
+          { contextData.stage === STAGE.VIDEO ? <PlayerStage /> : ""}
+          { contextData.stage === STAGE.ALBUM ? <AlbumStage /> : ""}
         </div>
       </div>
     <ControlButtons />

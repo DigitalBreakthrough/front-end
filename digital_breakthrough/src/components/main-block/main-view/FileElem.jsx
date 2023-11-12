@@ -3,7 +3,6 @@ import React from 'react'
 export default function FileElem(props) {
   const { previewUrl, fileName, fileSize, loadProgress, totalProgress } = props;
 
-  console.log(loadProgress);
   const calculateProgress = (loadProgress)=>{
     return loadProgress/totalProgress;
   }
