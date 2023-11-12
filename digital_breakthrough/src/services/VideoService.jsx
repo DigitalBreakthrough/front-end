@@ -1,4 +1,4 @@
-const API_URL = ""
+const API_URL = "localhost:8081/attachments"
 
 const methods = {
     POST: "POST",
@@ -7,14 +7,17 @@ const methods = {
 
 export const save = async (file, setPercent) => {
     let xhr = new XMLHttpRequest();
-    xhr.open(methods.POST, API_URL + "/", [true]);
+    xhr.open(methods.POST, API_URL + "/upload", [true]);
+    const files = [];
+    files.push(file);
     const body = {
-        file: file,
+        file: file
     }
     xhr.send([body])
     xhr.onprogress((e) => {
        setPercent(e.loaded)     
     })
+    return xhr.upload.response;
 }
 
 export const upload = async (setPercent) => {

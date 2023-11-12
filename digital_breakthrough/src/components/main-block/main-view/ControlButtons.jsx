@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { FileContext } from "../../../context/FilesContext";
 import New from "../../../assets/images/new.png";
-import Save from "../../../assets/images/save.png"
+import SavePic from "../../../assets/images/save.png"
+import { save } from "../../../services/VideoService";
 import { STAGE } from "../../../utils/StageData";
 
 export default function ControlButtons() {
@@ -31,10 +32,13 @@ export default function ControlButtons() {
         style={{ display: value.files ? "flex" : "none" }}
       >
         <button id="cancel-button">Отмена</button>
-        <button id="send-button">Проверить</button>
+        <button id="send-button" onClick={ ()=> {
+          save(value.files[0], value.setPercent);
+          value.setStage(STAGE.ALBUM)
+          } }>Проверить</button>
       </div>
       <button id="download" disabled={value.files ? false : true}>
-      <img src={Save} alt="" />
+      <img src={SavePic} alt="" />
         Скачать
       </button>
     </div>

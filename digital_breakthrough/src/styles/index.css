@@ -22,6 +22,20 @@ html, body{
     background: #E4F4FF;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #a9c2f0;
+    border-radius: 5px;
+}
+
 html{
     font-size: 15px;
 }
@@ -123,10 +137,20 @@ html{
     border: none;
     border-radius: 10px;
     background: #1C80DD;
+
+    transition: 0.5s;
 }
 
 .load-half button:disabled{
-    background: #5e758a;
+    background: #58636d;
+}
+
+.load-half button:hover{
+    background: #54abfc;
+}
+
+.load-half button:active{
+    background: #0b5192;
 }
 
 .files-container {
@@ -135,6 +159,9 @@ html{
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+
+    overflow-y: scroll;
+    
 }
 
 .file-element{
@@ -196,13 +223,29 @@ html{
     background: #D95656;
 }
 
+#cancel-button:hover{
+    background: #e07474;
+}
+
+#cancel-button:active{
+    background: #964e4e;
+}
+
 #send-button{
     background: #1C80DD;
 }
 
+#send-button:hover{
+    background: #569de0;
+}
+
+#send-button:active{
+    background: #145da1;
+}
+
 .timecode-container{
     min-width: 40vh;
-    max-height: 50%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -211,7 +254,7 @@ html{
 }
 
 #timecodes{
-    height: 100%;
+    height: 500px;
     overflow: scroll;
 }
 
@@ -248,6 +291,7 @@ html{
 .meta{
     display: flex;
     flex-direction: row;
+    font-weight: normal;
     gap: 5px;
 }
 
@@ -271,7 +315,7 @@ html{
 }
 
 .history-elem{
-    height: 180px;
+    height: 100px;
     width: 100%;
     padding: 10px;
     display: flex;
@@ -287,10 +331,14 @@ html{
     width: auto;
 }
 
-.history-meta{
+.history-info{
     font-family: 'Noto Sans';
-    font-size: 24px;
+    font-size: 20px;
     width: 100%;
+    gap: 10px;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .history-elem button{
