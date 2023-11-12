@@ -11,7 +11,7 @@ export default function MainBlock() {
   return (
     <div className='main-block'>
         <MainView />
-        {value.stage === STAGE.ALBUM || value.stage === STAGE.VIDEO ? <TimeCodeView /> : ""}
     </div>
   )
+  //{value.stage === STAGE.ALBUM || value.stage === STAGE.VIDEO ? <TimeCodeView /> : ""}
 }

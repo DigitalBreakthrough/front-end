@@ -195,7 +195,7 @@ html{
     justify-content: space-between;
 }
 
-.control_buttons button{
+.control_buttons button, a{
     font-size: 20px;
     font-family: 'Inter';
     height: 60px;
@@ -217,6 +217,8 @@ html{
 .result-viewport{
     height: 100%;
     width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .result-viewport img{
@@ -324,6 +326,13 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.history-list{
+    
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     padding: 10px;
     gap: 10px;
 }
@@ -367,4 +376,24 @@ html{
 button img{
     height: 100%;
     width: auto;
+}
+
+a img{
+    height: 100%;
+    width: auto;
+}
+
+.dropdown{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.camera-selector{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Noto Sans';
+    font-size: 20px;
+    padding: 10px 30px;
+    gap: 15px;
 }

@@ -6,13 +6,14 @@ export const initHistory = () => {
 }
 
 export const addHistory = (data) => {
+    const dataFull = {data:data, date:new Date()};
     if(getHistory() === null) {
         let history = [];
-        history.push(data);
+        history.push(dataFull);
         localStorage.setItem("history", JSON.stringify(history));
     } else {
         let history = getHistory();
-        history.push(data);
+        history.push(dataFull);
         localStorage.setItem("history", JSON.stringify(history));
     }
 }

@@ -8,16 +8,8 @@ export default function HistoryElem(props) {
   const { value } = useContext(FileContext);
 
   const getStatusString = (status) => {
-    switch (status) {
-      case 0:
-        return "Нарушений нет";
-      case 1:
-        return "Нарушен периметр";
-      case 2:
-        return "Опасность!";
-      default:
-        return "Не определено";
-    }
+    console.log(status);
+    return status=='TRUE' ? "Нарушения есть" : "Нарушений нет";
   };
 
   const getColorByPercentage = (percentage) => {
@@ -46,7 +38,7 @@ export default function HistoryElem(props) {
     <div className="history-elem">
       <img src={previewUrl} alt="" />
       <div className='history-info'>
-        <div>{date}</div>
+        <div>{date.toString()}</div>
         <div className="meta">
           <div>{getStatusString(status)}</div>
           <div style={percentStyle} className="percent">

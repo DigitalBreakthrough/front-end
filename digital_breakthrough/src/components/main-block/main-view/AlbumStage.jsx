@@ -21,7 +21,7 @@ const AlbumStage = () => {
 
   return (
     <div className="result-viewport">
-      <img src={value.currentResult.downloadURL !== null && value.currentResult.downloadURL} alt="" />
+      <img src={value.currentResult.attachments[0].downloadURL !== null && value.currentResult.attachments[0].downloadURL} alt="" />
     </div>
   );
 };

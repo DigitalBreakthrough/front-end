@@ -41,9 +41,17 @@ export default function LoadPics() {
         type="file"
         accept=".png, .jpg"
         multiple
-        onChange={(e) => {value.setFiles(e.target.files)
-                          value.setStage(STAGE.PROGRESS)
-                          console.log();
+        onChange={(e) => {
+          const filesArray = Array.from(e.target.files);
+          const defaultSequence = { camName: 'DpR-Csp-uipv-ShV-V1', files:[] };
+          filesArray.forEach(file => {
+            defaultSequence.files.push(file);
+          });
+
+          value.setFiles(defaultSequence)
+          console.log(defaultSequence);
+          value.setStage(STAGE.PROGRESS)
+          console.log();
                 }}
         hidden
         ref={inputRef}

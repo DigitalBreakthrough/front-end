@@ -5,7 +5,7 @@ const methods = {
     GET: "GET"
 }
 
-export const save = (file) => {
+export const save = (files) => {
     // let xhr = new XMLHttpRequest();
     // xhr.open(methods.POST, API_URL + "/", [true]);
     // const body = {
@@ -16,12 +16,14 @@ export const save = (file) => {
     //    setPercent(e.loaded)     
     // })
     const data = new FormData();
-    data.append("file", file);
+    data.append("camName", files.camName);
+    data.append("file", files.files[0]);
+    //console.log(data.get('camName'));
     const options = {
         method: methods.POST,
         body: data,
     }
-    return fetch(API_URL + "/upload", options)
+    return fetch(API_URL + "/uploads", options)
         .then(response => response.json())
         .then(response => response)
         .catch(error => console.log(error));
