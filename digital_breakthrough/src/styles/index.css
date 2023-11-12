@@ -214,6 +214,20 @@ html{
     gap: 10px;
 }
 
+.result-viewport{
+    height: 100%;
+    width: 100%;
+}
+
+.result-viewport img{
+    height: 100%;
+    width: 100%;
+}
+
+.carousel{
+    height: 100%;
+}
+
 .request-buttons button{
     color: white;
     border-radius: 10px;

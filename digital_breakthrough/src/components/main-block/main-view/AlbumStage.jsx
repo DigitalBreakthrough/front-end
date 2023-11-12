@@ -20,7 +20,16 @@ const AlbumStage = () => {
   };
 
   return (
-    <div
+    <div className="result-viewport">
+      <img src={value.currentResult.downloadURL !== null && value.currentResult.downloadURL} alt="" />
+    </div>
+  );
+};
+
+export default AlbumStage;
+
+/*
+<div
       className=""
       style={{
         justifyContent: "space-between",
@@ -38,8 +47,6 @@ const AlbumStage = () => {
       <div
         className="carousel"
         style={{
-          width: "889px",
-          height: "449px",
           background: value.currentResult !== null && `url(${value.currentResult.attachments[0]}) center/100% no-repeat`,
           transitionProperty: "background",
           transitionDuration: ".5s",
@@ -55,7 +62,4 @@ const AlbumStage = () => {
         next
       </button>
     </div>
-  );
-};
-
-export default AlbumStage;
+    */
